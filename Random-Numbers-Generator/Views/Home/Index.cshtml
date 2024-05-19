@@ -1,0 +1,38 @@
+﻿@model RNG
+@{
+    ViewData["Title"] = "Random Number Generator";
+}
+<div class="container" style="background-color: lightslategray">
+    <div class="main-container w-75 mx-auto d-block" style="background-color: white">
+        <img src="~/Images/RanNumbers1.jpg" width="300px" height="300px" class="img-fluid mx-auto d-block" alt="A picture of random numbers." />
+        <h1 class="text-center">Random Number Generator</h1>
+        <h2 class="text-center">Choose a range and get a table of random numbers.</h2>
+        <form asp-action="Index" method="post">  
+            <div class="row row-cols-3">
+                <div class="col"></div>
+                <div class="form-floating mb-3 w-25 col">
+                    <input asp-for="Num1" type="number" class="form-control" />
+                    <label asp-for="Num1">Starting Range</label>
+                    <span asp-validation-for="Num1" class="text-danger"></span>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="form-floating mb-3 w-25 col">
+                    <input asp-for="Num2" type="number" class="form-control" />
+                    <label asp-for="Num2">Ending Range</label>
+                    <span asp-validation-for="Num2" class="text-danger"></span>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="form-floating mb-3 w-25 col">
+                    <input asp-for="Total" type="number" class="form-control" />
+                    <label asp-for="Total">Number of Random Numbers</label>
+                    <span asp-validation-for="Total" class="text-danger"></span>
+                </div>
+                <div class="col"> 
+                    <button type="submit" class="btn btn-primary">Get Numbers</button>                
+                </div>            
+            </div>                   
+        </form>
+    </div>
+</div>

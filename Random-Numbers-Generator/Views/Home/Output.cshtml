@@ -1,0 +1,25 @@
+﻿@model RNG
+@{
+    ViewData["Title"] = "Random Number Generator";
+}
+
+<img src="~/images/RanNumbers2.jpg" class="img-fluid mx-auto d-block" alt="A picture of random numbers." />
+<h1>List of Random numbers below:</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Random Numbers</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Total; i++)
+        {
+            <tr>
+                <td>
+                    @Model.GetNumber()
+                </td>
+            </tr>
+        } 
+    </tbody>
+</table>
+
